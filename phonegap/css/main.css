@@ -1,0 +1,13 @@
+#menu ul[data-role="listview"] li, .aboutTitle, .center {
+    text-align: center;
+}
+
+.aboutInfo {
+    text-align: justify;
+}
+
+figure {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}

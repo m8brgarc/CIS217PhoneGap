@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css" type="text/css"/>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css"/>
+    <link rel="stylesheet" href="css/main.css" type="text/css"/>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+
+<!-- Menu Page -------------------------------------------------------------------->
+
+    <div data-role="page" id="menu">
+        <div data-role="header" data-position="fixed">
+            <h1>M&amp;P Pizza's</h1>
+        </div>
+        <div data-role="content">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#menu" class="ui-btn-active ui-state-persist">Menu</a></li>
+                    <li><a href="#order">Order</a></li>
+                    <li><a href="#location">Location</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            <ul data-role="listview" data-inset="true">
+                <li data-role="list-divider"><h3>Pizza Size</h3></li>
+                <li>
+                    <fieldset data-role="controlgroup">
+                        <legend>Choose a size:</legend>
+                        <input type="radio" name="size" id="radio-size-choice-1" value="med" data-size="Medium" data-price="7.00"/>
+                        <label for="radio-size-choice-1">Medium</label>
+
+                        <input type="radio" name="size" id="radio-size-choice-2" value="lg" checked="checked" data-size="Large" data-price="10.00"/>
+                        <label for="radio-size-choice-2">Large</label>
+
+                        <input type="radio" name="size" id="radio-size-choice-3" value="xlg" data-size="Extra Large" data-price="13.50"/>
+                        <label for="radio-size-choice-3">Xtra-Large</label>
+                    </fieldset>
+                </li>
+                <li data-role="list-divider"><h3>Pizza Toppings</h3></li>
+                <li>
+                    <fieldset data-role="controlgroup">
+                        <legend>Choose as many toppings as you'd like:</legend>
+                        <input type="checkbox" name="pepperoni" id="checkbox-1a" class="custom top" data-top="Pepperoni" data-price="1.00" />
+                        <label for="checkbox-1a">Pepperoni</label>
+
+                        <input type="checkbox" name="chicken" id="checkbox-2a" class="custom top" data-top="Chicken" data-price="2.00" />
+                        <label for="checkbox-2a">Chicken</label>
+
+                        <input type="checkbox" name="sausage" id="checkbox-3a" class="custom top" data-top="Sausage" data-price="1.50" />
+                        <label for="checkbox-3a">Sausage</label>
+
+                        <input type="checkbox" name="bpepper" id="checkbox-4a" class="custom top" data-top="Bell Pepper" data-price="0.75" />
+                        <label for="checkbox-4a">Bell Pepper</label>
+                    </fieldset>
+                </li>
+                <li data-role="list-divider"><h3>Pizza Crust</h3></li>
+                <li>
+                <fieldset data-role="controlgroup">
+                    <legend>Choose a crust:</legend>
+                    <input type="radio" name="crust" id="radio-choice-1" value="Thin" data-price="0.00"/>
+                    <label for="radio-choice-1">Thin Crust</label>
+
+                    <input type="radio" name="crust" id="radio-choice-2" value="Regular" checked="checked" data-price="0.00" />
+                    <label for="radio-choice-2">Regular Crust</label>
+
+                    <input type="radio" name="crust" id="radio-choice-3" value="Thick" data-price="1.00" />
+                    <label for="radio-choice-3">Thick Crust</label>
+
+                    <input type="radio" name="crust" id="radio-choice-4" value="Stuffed" data-price="2.00" />
+                    <label for="radio-choice-4">Stuffed Crust</label>
+                </fieldset>
+                </li>
+            </ul>
+            <div data-role="button" data-theme="e" id="addPizza"><h2>Add Pizza to Order</h2></div>
+            <ul data-role="listview" data-inset="true">
+                <li data-role="list-divider" id="drinkList" data-price="1.75"><h3>Drinks (1-Liter)</h3><h4>Price: $1.75 per Drink</h4></li>
+                <li>
+                    <div data-role="collapsible">
+                        <h3>Pepsi</h3>
+                        <div data-role="rangeslider">
+                            <label for="pepsiAmount">Quantity:</label>
+                            <input name="pepsiAmount" id="pepsiAmount" min="0" max="8" value="0" type="range" data-drink="Pepsi" />
+                        </div>
+                    </div>
+
+                    <div data-role="collapsible">
+                        <h3>Sprite</h3>
+                        <div data-role="rangeslider">
+                            <label for="spriteAmount">Quantity:</label>
+                            <input name="spriteAmount" id="spriteAmount" min="0" max="8" value="0" type="range" data-drink="Sprite" />
+                        </div>
+                    </div>
+
+                    <div data-role="collapsible">
+                        <h3>Juice</h3>
+                        <div data-role="rangeslider">
+                            <label for="juiceAmount">Quantity:</label>
+                            <input name="juiceAmount" id="juiceAmount" min="0" max="8" value="0" type="range" data-drink="Juice" />
+                        </div>
+                    </div>
+
+                    <div data-role="collapsible">
+                        <h3>Mountain Dew</h3>
+                        <div data-role="rangeslider">
+                            <label for="dewAmount">Quantity:</label>
+                            <input name="dewAmount" id="dewAmount" min="0" max="8" value="0" type="range" data-drink="Mountain Dew" />
+                        </div>
+                    </div>
+                    <div data-role="button" data-theme="e" id="addDrink"><h4>Add Drinks to Order</h4></div>
+                </li>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="tel:555-555-5555"><h1>CALL US</h1></a></li>
+                </ul>
+            </div>
+            <h4>@Copyright MomAndPop Inc.</h4>
+        </div>
+    </div>
+
+<!-- Order Page -------------------------------------------------------------------->
+
+    <div data-role="page" id="order">
+        <div data-role="header" data-position="fixed">
+            <h1>M&amp;P Pizza's</h1>
+        </div>
+        <div data-role="content">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#order" class="ui-btn-active ui-state-persist">Order</a></li>
+                    <li><a href="#location">Location</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            <div data-role="controlgroup">
+                <a href="#mypanel" data-role="button" id="cOrder">Show Current Order</a>
+                <span data-role="button" id="fOrder">Save Favorite Order</span>
+                <span data-role="button" id="submitOrder">Submit Order</span>
+            </div>
+            <div data-role="panel" id="mypanel" data-position="right" data-display="overlay">
+                <div>
+                    <h3>Your Total:</h3>
+                    <span id="total"></span>
+                </div>
+                <h4>Your Order:</h4>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="tel:555-555-5555"><h1>CALL US</h1></a></li>
+                </ul>
+            </div>
+            <h4>@Copyright MomAndPop Inc.</h4>
+        </div>
+    </div>
+
+<!-- Location Page -------------------------------------------------------------------->
+
+    <div data-role="page" id="location">
+        <div data-role="header" data-position="fixed">
+            <h1>M&amp;P Pizza's</h1>
+        </div>
+        <div data-role="content">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#order">Order</a></li>
+                    <li><a href="#location" class="ui-btn-active ui-state-persist">Location</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            <h3 class="center">Address Information:</h3>
+            <p class="center">
+                Mackenzie River Pizza Co, North Nevada Street, Spokane, WA 99218
+            </p>
+            <h4 class="center">Directions:</h4>
+            <p>
+                <script>
+                    navigator.geolocation.getCurrentPosition(function(pos){
+                        var lat = pos.coords.latitude;
+                        var lng = pos.coords.longitude;
+                        var map = '<iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=d&amp;source=s_d&amp;saddr=' + lat.toString() + ',' + lng.toString() + '&amp;daddr=Mackenzie+River+Pizza+Co,+North+Nevada+Street,+Spokane,+WA+99218&amp;hl=en&amp;geocode=FT5F2AId7cEA-Q%3BFbx32AIdZK0A-Slvy7spPRyeVDGTdeZEyaIWIw&amp;aq=0&amp;oq=my&amp;sll=47.738977,-117.394152&amp;sspn=0.050391,0.048838&amp;t=h&amp;mra=ls&amp;dmli=0&amp;glp=1&amp;ie=UTF8&amp;ll=47.734381,-117.393139&amp;spn=0.013179,0.004507&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=d&amp;source=embed&amp;saddr=47.727934,-117.390867&amp;daddr=Mackenzie+River+Pizza+Co,+North+Nevada+Street,+Spokane,+WA+99218&amp;hl=en&amp;geocode=FT5F2AId7cEA-Q%3BFbx32AIdZK0A-Slvy7spPRyeVDGTdeZEyaIWIw&amp;aq=0&amp;oq=my&amp;sll=47.738977,-117.394152&amp;sspn=0.050391,0.048838&amp;t=h&amp;mra=ls&amp;dmli=0&amp;glp=1&amp;ie=UTF8&amp;ll=47.734381,-117.393139&amp;spn=0.013179,0.004507" style="color:#0000FF;text-align:left">View Larger Map</a></small>'
+
+                        $("#directionMap").html(map);
+                    });
+                </script>
+                <div id="directionMap" class="center">
+
+                </div>
+            </p>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="tel:555-555-5555"><h1>CALL US</h1></a></li>
+                </ul>
+            </div>
+            <h4>@Copyright MomAndPop Inc.</h4>
+        </div>
+    </div>
+
+<!-- About Page -------------------------------------------------------------------->
+
+    <div data-role="page" id="about">
+        <div data-role="header" data-position="fixed">
+            <h1>M&amp;P Pizza's</h1>
+        </div>
+        <div data-role="content">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#order">Order</a></li>
+                    <li><a href="#location">Location</a></li>
+                    <li><a href="#about" class="ui-btn-active ui-state-persist">About Us</a></li>
+                </ul>
+            </div>
+            <h3 class="aboutTitle">Mom &amp; Pop's Pizza</h3>
+            <figure>
+                <img src="imgs/making-pizza.jpg" alt="Pizza being Made" class="pizzapic"/>
+            </figure>
+            <p class="aboutInfo">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt ornare magna, sit amet ultricies ante dictum sit amet. Sed consequat ante in lacinia ultricies. Duis nulla orci, dictum nec placerat ac, viverra ut lorem. Curabitur egestas orci eget imperdiet accumsan. Sed volutpat lobortis vulputate. Quisque congue ligula nec nibh aliquam consequat. Fusce quis leo id enim interdum tincidunt ac in purus. Cras porta rhoncus ligula, nec accumsan risus lacinia et.
+
+                Suspendisse a augue in erat fringilla tempor. Curabitur imperdiet nisi at tortor sagittis mattis. Integer elementum varius odio ut lacinia. Vestibulum aliquam augue ac lacinia lobortis. Etiam scelerisque, turpis sed varius bibendum, sapien felis malesuada erat, quis lobortis mauris risus sed ligula. Maecenas pretium sodales felis vel dignissim. Donec ullamcorper lobortis dignissim. Cras eget urna id tortor sagittis viverra ultrices sit amet nibh. Quisque vitae erat a mauris tempus tincidunt. Mauris mattis lectus sed diam ultrices adipiscing. Pellentesque commodo ut diam a viverra. Morbi vel massa varius, porttitor libero sed, rutrum nisi. Aliquam diam felis, sollicitudin at augue nec, porta fringilla lectus. Duis mattis purus quis lectus euismod, vitae molestie mauris iaculis. Curabitur aliquam nulla ut scelerisque tempus.
+            </p>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="tel:555-555-5555"><h1>CALL US</h1></a></li>
+                </ul>
+            </div>
+            <h4>@Copyright MomAndPop Inc.</h4>
+        </div>
+    </div>
+</body>
+</html>
