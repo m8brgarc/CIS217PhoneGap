@@ -122,7 +122,7 @@ $(document).ready(function(){
             }
         }
         orderURL += "&total=" + total.toFixed(2).toString();
-        $.getJSON('order.php?' + orderURL, function(data){
+        $.get('order.php?' + orderURL, function(data){
             navigator.notification.beep(2);
             navigator.notification.vibrate(1000);
             navigator.notification.alert(data);
