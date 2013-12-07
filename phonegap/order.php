@@ -20,6 +20,6 @@ for($x = 0; $x < count($drinks); $x++){
 }
 $message .= "Total: $" . $total;
 
-mail("kkaren509@gmail.com", "Customer Pizza Order", $message, "From: M&P Pizza");
+mail("brandonkeoni@gmail.com", "Customer Pizza Order", $message, "From: M&P Pizza");
 
 echo json_encode("Order Sent!");
