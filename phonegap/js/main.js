@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+
     var order = [];
     var total = 0.00;
     var pizzas = [];
@@ -68,6 +70,7 @@ $(document).ready(function(){
         $("#listStart").append("<li>" + pizza.size + " " + pizza.crust + " Crust " + pizza.top + "Pizza: $" + pizza.price.toFixed(2).toString() +"</li>");
         total += pizza.price;
         $("#total").text("$" + total.toFixed(2).toString());
+        navigator.notification.alert("Pizza has been added to your Order.");
     });
 
     $("#addDrink").on("click", function(){
@@ -88,6 +91,7 @@ $(document).ready(function(){
             total += drinks[i].price;
         }
         $("#total").text("$" + total.toFixed(2).toString());
+        navigator.notification.alert("Drink Selection added to your Order.");
     });
 
     $("#fOrder").on("click", function(){
@@ -119,7 +123,9 @@ $(document).ready(function(){
         }
         orderURL += "&total=" + total.toFixed(2).toString();
         $.getJSON('order.php?' + orderURL, function(data){
-            alert(data);
+            navigator.notification.beep(2);
+            navigator.notification.vibrate(1000);
+            navigator.notification.alert(data);
         });
     });
 });
